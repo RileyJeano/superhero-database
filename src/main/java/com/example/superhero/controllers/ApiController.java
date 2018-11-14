@@ -53,7 +53,7 @@ public class ApiController {
 	public Iterable<Head> getHead() {
 		return headRepo.findAll();
 	}
-	@GetMapping("/api/hair/{id}")
+	@GetMapping("/api/head/{id}")
 	public String getHead(@PathVariable Long id, Model model) throws Exception {
 		Optional<Head> head = headRepo.findById(id);
 		if (head.isPresent()) {
@@ -84,7 +84,7 @@ public class ApiController {
 	public Iterable<Bottom> getBottom() {
 		return bottomRepo.findAll();
 	}
-	@GetMapping("/api/hair/{id}")
+	@GetMapping("/api/bottom/{id}")
 	public String getBottom(@PathVariable Long id, Model model) throws Exception {
 		Optional<Bottom> bottom = bottomRepo.findById(id);
 		if (bottom.isPresent()) {
