@@ -1,5 +1,9 @@
 package com.example.superhero.repositories;
 
-public interface HeadRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.superhero.models.Head;
+
+public interface HeadRepository extends CrudRepository<Head, Long> {
 
 }
