@@ -1,5 +1,11 @@
 package com.example.superhero.repositories;
 
-public interface HairRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.superhero.models.Hair;
+
+public interface HairRepository extends CrudRepository <Hair, Long> {
 
 }
+
+

@@ -1,5 +1,10 @@
 package com.example.superhero.repositories;
 
-public interface TopRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.superhero.models.Top;
+
+public interface TopRepository extends CrudRepository <Top, Long> {
 
 }
+
