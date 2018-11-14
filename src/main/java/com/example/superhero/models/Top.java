@@ -10,5 +10,22 @@ public class Top {
 	@Id
 	@GeneratedValue
 	private Long topId;
+	private String top;
+
+	public Top() {
+	}
+
+	public Top(String top) {
+		super();
+		this.top = top;
+	}
+
+	public Long getTopId() {
+		return topId;
+	}
+
+	public String getTop() {
+		return top;
+	}
 
 }
