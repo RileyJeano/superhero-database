@@ -3,6 +3,9 @@ package com.example.superhero.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Head {
@@ -11,6 +14,10 @@ public class Head {
 	@GeneratedValue
 	private Long headId;
 	private String head;
+
+	@JsonIgnore
+	@OneToOne
+	private Hero hero;
 
 	public Head() {
 
