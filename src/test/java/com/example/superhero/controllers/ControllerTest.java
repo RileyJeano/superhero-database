@@ -15,10 +15,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.example.superhero.models.Bottom;
 import com.example.superhero.models.Hair;
 import com.example.superhero.models.Head;
+import com.example.superhero.models.Hero;
 import com.example.superhero.models.Top;
 import com.example.superhero.repositories.BottomRepository;
 import com.example.superhero.repositories.HairRepository;
 import com.example.superhero.repositories.HeadRepository;
+import com.example.superhero.repositories.HeroRepository;
 import com.example.superhero.repositories.TopRepository;
 
 @RunWith(SpringRunner.class)
@@ -39,6 +41,12 @@ private TopRepository topRepo;
 
 @MockBean
 private BottomRepository bottomRepo;
+
+@MockBean
+private HeroRepository heroRepo;
+
+@Mock
+private Hero hero1;
 
 @Mock
 private Hair hair1;

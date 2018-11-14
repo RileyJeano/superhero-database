@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.superhero.models.Bottom;
 import com.example.superhero.models.Hair;
 import com.example.superhero.models.Head;
+import com.example.superhero.models.Hero;
 import com.example.superhero.models.Top;
 import com.example.superhero.repositories.BottomRepository;
 import com.example.superhero.repositories.HairRepository;
 import com.example.superhero.repositories.HeadRepository;
+import com.example.superhero.repositories.HeroRepository;
 import com.example.superhero.repositories.TopRepository;
 
 @RestController
@@ -32,6 +34,21 @@ public class ApiController {
 	
 	@Autowired
 	BottomRepository bottomRepo;
+	
+	@Autowired
+	HeroRepository heroRepo;
+	
+	@GetMapping("/api/hero/{id}")
+	public String getHero(@PathVariable Long id, Model model) throws Exception {
+		Optional<Hero> hero = heroRepo.findById(id);
+		if (hero.isPresent()) {
+			model.addAttribute("hero",hero.get());
+		} else {
+			return "redirect:/index?invalid=true";
+		}
+		return "index";
+	}
+	
 
 	@GetMapping("/api/hair")
 	public Iterable<Hair> getHair() {
