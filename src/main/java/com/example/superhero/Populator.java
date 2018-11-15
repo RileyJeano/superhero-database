@@ -41,22 +41,22 @@ public class Populator implements CommandLineRunner {
 	}
 
 	private Hair createHair(String hairStyle, int hairNumber) {
-		Hair b = new Hair(hairStyle, 0);
+		Hair b = new Hair(hairStyle, hairNumber);
 		return hairRepo.save(b);
 	}
 
 	private Head createHead(String head, int headNumber) {
-		Head c = new Head(head, 0);
+		Head c = new Head(head, headNumber);
 		return headRepo.save(c);
 	}
 
 	private Top createTop(String top, int topNumber) {
-		Top d = new Top(top, 0);
+		Top d = new Top(top, topNumber);
 		return topRepo.save(d);
 	}
 
-	private Bottom createBottom(String bottom, int topNumber) {
-		Bottom e = new Bottom(bottom, 0);
+	private Bottom createBottom(String bottom, int bottomNumber) {
+		Bottom e = new Bottom(bottom, bottomNumber);
 		return bottomRepo.save(e);
 	}
 
