@@ -14,6 +14,7 @@ public class Head {
 	@GeneratedValue
 	private Long headId;
 	private String head;
+	private int headNumber;
 
 	@JsonIgnore
 	@OneToOne
@@ -23,8 +24,17 @@ public class Head {
 
 	}
 
-	public Head(String head) {
+	public Head(String head, int headNumber) {
 		this.head = head;
+		this.headNumber = headNumber;
+	}
+
+	public int getHeadNumber() {
+		return headNumber;
+	}
+
+	public Hero getHero() {
+		return hero;
 	}
 
 	public Long getHeadId() {

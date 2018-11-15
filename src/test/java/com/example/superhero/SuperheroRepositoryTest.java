@@ -59,20 +59,22 @@ public class SuperheroRepositoryTest {
 		Iterable<Head> result = headRepo.findAll();
 		assertThat(result, hasItems(headOne));
 	}
+
 	@Test
 	public void shouldContainTop() {
 		Top topOne = topRepo.save(new Top(""));
 		Iterable<Top> result = topRepo.findAll();
 		assertThat(result, hasItems(topOne));
 	}
+
 	public void shouldContainHero() {
-		Head headOne = headRepo.save(new Head(""));
-		Hair hairOne = hairRepo.save(new Hair(""));
-		Top topOne = topRepo.save(new Top(""));
-		Bottom bottomOne = bottomRepo.save(new Bottom(""));
+		Head headOne = headRepo.save(new Head());
+		Hair hairOne = hairRepo.save(new Hair());
+		Top topOne = topRepo.save(new Top());
+		Bottom bottomOne = bottomRepo.save(new Bottom());
 		Hero heroOne = (Hero) heroRepo.save(new Hero());
 		Iterable<Hero> result = heroRepo.findAll();
 		assertThat(result, hasItems(heroOne));
 	}
-	
+
 }
