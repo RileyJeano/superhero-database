@@ -65,6 +65,16 @@ public class ApiController {
 		return "index";
 		
 	}
+	@GetMapping("/api/hair/{hairNumber}")
+	public String GetHair(@PathVariable int hairNumber, Model model) throws Exception {
+		Optional<Hair> hair = hairRepo.findByHairNumber(hairNumber);
+		if (hair.isPresent() ) {
+			model.addAttribute("hair", hair.get());
+		} else {
+			return "redirect:/api/hair/{id}?invalid=true";
+		}
+		return "redirect:/api/hair/{id}";
+	}
 	
 	@GetMapping("/api/head")
 	public Iterable<Head> getHead() {
