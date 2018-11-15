@@ -64,6 +64,23 @@ public class Populator implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		Hero baseHero = createHero("", "/blankBody.jpg", null, null, null, null);
+
+		Hair hair1 = createHair("/hair1.png", 1);
+		Hair hair2 = createHair("/hair2.png", 2);
+		Hair hair3 = createHair("/hair3.png", 3);
+
+		Head head1 = createHead("/head1.png", 1);
+		Head head2 = createHead("/head2.png", 2);
+		Head head3 = createHead("/head3.png", 3);
+
+		Top top1 = createTop("/top1.png", 1);
+		Top top2 = createTop("/top2.png", 2);
+		Top top3 = createTop("/top3.png", 3);
+
+		Bottom bottom1 = createBottom("/bottom1.png", 1);
+		Bottom bottom2 = createBottom("/bottom2.png", 2);
+		Bottom bottom3 = createBottom("/bottom3.png", 3);
+
 	}
 
 }
