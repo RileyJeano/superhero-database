@@ -72,7 +72,7 @@ public class ApiController {
 			return hair.get();
 		} else 
 			// this should not return null if not present.
-			return hair.get();
+			return null;
 	}
 	
 	@GetMapping("/api/head")
