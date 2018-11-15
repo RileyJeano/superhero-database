@@ -14,6 +14,7 @@ public class Hero {
 	@GeneratedValue
 	private Long heroId;
 	private String heroName;
+	private String heroImage;
 
 	@JsonIgnore
 	@OneToOne
@@ -34,12 +35,17 @@ public class Hero {
 	public Hero() {
 	}
 
-	public Hero(String heroName, Hair heroHair, Head heroHead, Top heroTop, Bottom heroBottom) {
+	public Hero(String heroName, String heroImage, Hair heroHair, Head heroHead, Top heroTop, Bottom heroBottom) {
 		this.heroName = heroName;
+		this.heroImage = heroImage;
 		this.heroHair = heroHair;
 		this.heroHead = heroHead;
 		this.heroTop = heroTop;
 		this.heroBottom = heroBottom;
+	}
+
+	public String getHeroImage() {
+		return heroImage;
 	}
 
 	public Long getHeroId() {

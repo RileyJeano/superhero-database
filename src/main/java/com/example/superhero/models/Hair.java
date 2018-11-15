@@ -14,6 +14,7 @@ public class Hair {
 	@GeneratedValue
 	private Long hairId;
 	private String hairStyle;
+	private int hairNumber;
 
 	@JsonIgnore
 	@OneToOne
@@ -22,8 +23,25 @@ public class Hair {
 	public Hair() {
 	}
 
-	public Hair(String hairStyle) {
+	public Hair(String hairStyle, int hairNumber) {
 		this.hairStyle = hairStyle;
+		this.hairNumber = hairNumber;
+	}
+
+	public int getHairNumber() {
+		return hairNumber;
+	}
+
+	public void setHairNumber(int hairNumber) {
+		this.hairNumber = hairNumber;
+	}
+
+	public Hero getHero() {
+		return hero;
+	}
+
+	public void setHero(Hero hero) {
+		this.hero = hero;
 	}
 
 	public Long getHairId() {

@@ -14,6 +14,7 @@ public class Bottom {
 	@GeneratedValue
 	private Long bottomId;
 	private String bottom;
+	private int bottomNumber;
 
 	@JsonIgnore
 	@OneToOne
@@ -23,9 +24,18 @@ public class Bottom {
 
 	}
 
-	public Bottom(String bottom) {
+	public Bottom(String bottom, int bottomNumber) {
 		super();
 		this.bottom = bottom;
+		this.bottomNumber = bottomNumber;
+	}
+
+	public int getBottomNumber() {
+		return bottomNumber;
+	}
+
+	public Hero getHero() {
+		return hero;
 	}
 
 	public Long getBottomId() {
