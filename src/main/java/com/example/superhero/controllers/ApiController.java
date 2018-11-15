@@ -70,9 +70,9 @@ public class ApiController {
 		Optional<Hair> hair = hairRepo.findByHairNumber(hairNumber);
 		if (hair.isPresent() ) {
 			return hair.get();
-		} else { // must return something is hair is not present.
-			
-		}
+		} else 
+			// this should not return null if not present.
+			return hair.get();
 	}
 	
 	@GetMapping("/api/head")
