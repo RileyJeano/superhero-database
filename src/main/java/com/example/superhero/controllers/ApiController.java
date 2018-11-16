@@ -65,6 +65,15 @@ public class ApiController {
 		return "index";
 		
 	}
+	@GetMapping("/api/hair/{hairNumber}")
+	public Hair GetHair(@PathVariable int hairNumber, Model model) throws Exception {
+		Optional<Hair> hair = hairRepo.findByHairNumber(hairNumber);
+		if (hair.isPresent() ) {
+			return hair.get();
+		} else 
+			// this should not return null if not present.
+			return null;
+	}
 	
 	@GetMapping("/api/head")
 	public Iterable<Head> getHead() {
