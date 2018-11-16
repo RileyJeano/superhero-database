@@ -41,28 +41,28 @@ public class SuperheroRepositoryTest {
 
 	@Test
 	public void shouldContainBottom() {
-		Bottom bottomOne = bottomRepo.save(new Bottom(""));
+		Bottom bottomOne = bottomRepo.save(new Bottom("", 0));
 		Iterable<Bottom> result = bottomRepo.findAll();
 		assertThat(result, hasItems(bottomOne));
 	}
 
 	@Test
 	public void shouldContainHair() {
-		Hair hairOne = hairRepo.save(new Hair(""));
+		Hair hairOne = hairRepo.save(new Hair("", 0));
 		Iterable<Hair> result = hairRepo.findAll();
 		assertThat(result, hasItems(hairOne));
 	}
 
 	@Test
 	public void shouldContainHead() {
-		Head headOne = headRepo.save(new Head(""));
+		Head headOne = headRepo.save(new Head("", 0));
 		Iterable<Head> result = headRepo.findAll();
 		assertThat(result, hasItems(headOne));
 	}
 
 	@Test
 	public void shouldContainTop() {
-		Top topOne = topRepo.save(new Top(""));
+		Top topOne = topRepo.save(new Top("", 0));
 		Iterable<Top> result = topRepo.findAll();
 		assertThat(result, hasItems(topOne));
 	}
