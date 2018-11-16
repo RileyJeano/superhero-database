@@ -34,9 +34,8 @@ public class Populator implements CommandLineRunner {
 	@Resource
 	BottomRepository bottomRepo;
 
-	private Hero createHero(String heroName, String heroImage, Hair heroHair, Head heroHead, Top heroTop,
-			Bottom heroBottom) {
-		Hero a = new Hero();
+	private Hero createHero(String heroName, String heroImage) {
+		Hero a = new Hero(heroName, heroImage);
 		return heroRepo.save(a);
 	}
 
@@ -63,7 +62,7 @@ public class Populator implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Hero baseHero = createHero("", "/blankBody.jpg", null, null, null, null);
+		Hero baseHero = createHero("", "/blankBody.jpg");
 
 		Hair hair1 = createHair("/hair1.png", 1);
 		Hair hair2 = createHair("/hair2.png", 2);

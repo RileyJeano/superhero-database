@@ -35,13 +35,9 @@ public class Hero {
 	public Hero() {
 	}
 
-	public Hero(String heroName, String heroImage, Hair heroHair, Head heroHead, Top heroTop, Bottom heroBottom) {
+	public Hero(String heroName, String heroImage) {
 		this.heroName = heroName;
 		this.heroImage = heroImage;
-		this.heroHair = heroHair;
-		this.heroHead = heroHead;
-		this.heroTop = heroTop;
-		this.heroBottom = heroBottom;
 	}
 
 	public String getHeroImage() {
